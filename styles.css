@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(40,40,40);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.calculators {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height:fit-content;
+    background-color: rgb(60,60,60);
+    border-style: solid;
+    border-radius: 40px;
+    padding: 40px;;
+    overflow-x: auto;
+}
+.calculator {
+    display:flex;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(100,100,100);
+    border-style: solid;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow-y: auto;
+}
+p, label {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Title {
+    font-size: 24px;
+    font-style:italic;
+    font-family: Arial, Helvetica, sans-serif
+}
