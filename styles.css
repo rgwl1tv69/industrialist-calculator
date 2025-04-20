@@ -1,40 +1,103 @@
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -200px -200px; /* Match the background-size width */
+  }
+}
+.collapsible {
+  transition: max-height 1s cubic-bezier(0,0,0.5,1), opacity 1s cubic-bezier(0,0,0.5,1);
+  opacity: 0;
+  transition-delay: 0s;
+  overflow: hidden;
+  max-height: 0;
+  background-color: #f0f0f0;
+}
+
+/* Use a large enough value to simulate "auto" */
+.collapsible.open {
+  max-height: 1200px; /* or some large enough px value */
+  visibility: visible;
+  opacity: 100;
+}
 body {
-    background-color: rgb(40,40,40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ValveControlTable {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 20px;
 }
 .container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 1;
 }
 .calculators {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height:fit-content;
-    background-color: rgb(60,60,60);
-    border-style: solid;
-    border-radius: 40px;
-    padding: 40px;;
-    overflow-x: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
+  height: fit-content;
+  width: 80vw;
+  background-color: rgb(60, 60, 60);
+  border-style: solid;
+  border-radius: 40px;
+  padding: 40px;
+  overflow-x: auto;
 }
 .calculator {
-    display:flex;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: rgb(100,100,100);
-    border-style: solid;
-    justify-content: space-between;
-    flex-direction: column;
-    overflow-y: auto;
+  display: flex;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgb(100, 100, 100);
+  border-style: solid;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow-y: auto;
 }
-p, label {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-style: normal;
+p,
+label {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-.Title {
-    font-size: 24px;
-    font-style:italic;
-    font-family: Arial, Helvetica, sans-serif
+button {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  width: fit-content;
+  border-radius: 15px;
+  border-style: solid;
+}
+.Title,
+.Credits {
+  font-size: 24px;
+  background-color: white;
+  border-style: solid;
+  border-radius: 15px;
+  padding: 15px;
+  color: black;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 0;
+  background-image: url("diamondplate.png");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: slide 2.75s linear infinite;
 }

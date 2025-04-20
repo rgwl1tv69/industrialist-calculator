@@ -3,28 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src = "script.js" defer></script>
-    <link rel = "stylesheet" href = "styles.css">
+    <title>Industrialist Calculator</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class = "container">
-        <p class = "Title">Industrialist Calculator<sup> v1.0</sup></p>
-        <div class = "calculators">
-            <div id = "LDE" class = "calculator">
-                <form>
-                    <label for="amount">Insert amount of LDEs:</label>
-                    <input type="number" min = "1" max = "1000" id = "amountLDE" name = "amount">
-                </form>
-                <p id = "LDE_DR">Amount of Diesel Refineries: N/A</p>
-                <p id = "LDE_FP">Amount of Filtration Plants: N/A</p>
-                <p id = "LDE_IOS">Amount of Industrial Oil Separators: N/A</p>
-                <p id = "LDE_CLP">Amount of Coal Liquefaction Plants: N/A</p>
-                <p id = "LDE_CD">Amount of Coal Drills: N/A</p>
-                <p id = "LDE_PJ">Amount of Pumpjacks: N/A</p>
-                <p id = "LDE_BO">Amount of Boilers: N/A</p>
-            </div>
+    <div class="container">
+      <p class="Title">Industrialist Calculator<sup> version 2</sup></p>
+      <div class="calculators">
+        <button data-name = "LDE" class = "collapsetoggle">toggle LDE section</button>
+        <div id="LDE" class="calculator collapsible">
+          <form>
+            <label for="amount">Insert amount of LDEs:</label>
+            <input
+              type="number"
+              min="1"
+              max="1000"
+              id="amountLDE"
+              name="amount"
+            />
+          </form>
+          <p id="LDE_DR">Amount of Diesel Refineries: N/A</p>
+          <p id="LDE_FP">Amount of Filtration Plants: N/A</p>
+          <p id="LDE_IOS">Amount of Industrial Oil Separators: N/A</p>
+          <p id="LDE_CLP">Amount of Coal Liquefaction Plants: N/A</p>
+          <p id="LDE_CD">Amount of Coal Drills: N/A</p>
+          <p id="LDE_PJ">Amount of Pumpjacks: N/A</p>
+          <p id="LDE_BO">Amount of Boilers: N/A</p>
         </div>
+        <button data-name = "VCs" class = "collapsetoggle">toggle VC section</button>
+        <div id="VCs" class="calculator collapsible">
+          <form>
+            <label for="amount">Insert amount of Valve Controls:</label>
+            <input
+              type="number"
+              min="1"
+              max="1000"
+              id="amountVC"
+              name="amount"
+            />
+          </form>
+          <p id="VCTable"></p>
+        </div>
+        <button data-name = "MDE" class = "collapsetoggle">toggle MDE section</button>
+        <div id="MDE" class="calculator collapsible">
+          <form>
+            <label for="amount"
+              >Insert amount of Modular Diesel Engines (0.087L refined
+              diesel/s/engine with 6 cylinders):</label
+            >
+            <input
+              type="number"
+              min="1"
+              max="1000"
+              id="amountMDE"
+              name="amount"
+            />
+          </form>
+          <p id="MDE_DR">Amount of Diesel Refineries: N/A</p>
+          <p id="MDE_COS">Amount of Crude Oil Separators: N/A</p>
+          <p id="MDE_LB">Amount of Liquid Boilers: N/A</p>
+          <p id="MDE_PJ">Amount of Oil Pumpjacks: N/A</p>
+        </div>
+      </div>
+      <p class="Credits">Credits to: mamytema, noobie, maxsters, fort-tema, savvayy, byte, equaals</p>
     </div>
+    <div class="background"></div>
   </body>
 </html>
