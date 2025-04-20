@@ -15,7 +15,7 @@ function buildFractionString(n) {
   return result.join("% ");
 }
 function update() {
-  let LDEAmount = document.getElementById("amountLDE").value;
+  let LDEAmount = new Number(document.getElementById("amountLDE").value);
   let CLPs = [[LDEAmount / 1.969111969, "Light Oil & Heavy Oil"]];
   let IOSs = [
     [CLPs[0][0] * 3.75, "Diesel from Light Oil"],
@@ -49,19 +49,36 @@ function update() {
     document.getElementById("amountVC").value
   );
   // Modular Diesel Engines
-  let MDEAmount = document.getElementById("amountMDE").value;
+  let MDEAmount = new Number(document.getElementById("amountMDE").value);
   DRs = [
     [MDEAmount / 3.875, "Refined Diesel"],
     [MDEAmount / 3.875, "Diesel"],
     [MDEAmount / 3.875, "Poor Quality Diesel"],
   ];
-  COSs = [[(DRs[2][0] * 2) / 3, "Crude Diesel"]];
-  LBs = [[COSs[0][0] * 2, "Hot Crude Oil"]];
+  let COSs = [[(DRs[2][0] * 2) / 3, "Crude Diesel"]];
+  let LBs = [[COSs[0][0] * 2, "Hot Crude Oil"]];
   PJs = [[LBs[0][0] * 0.75, "Crude Oil"]];
   updateText("MDE_DR", "Diesel Refineries", DRs);
   updateText("MDE_COS", "Crude Oil Separators", COSs);
   updateText("MDE_LB", "Liquid Boilers", LBs);
   updateText("MDE_PJ", "Large Pumpjacks", PJs);
+  let IP2Amount = new Number(document.getElementById("amountIP2").value);
+  let PMK2s = [[IP2Amount / 0.75, "Iron Plate<sup>2</sup>s"]];
+  let ISs = [[IP2Amount / 0.75, "Iron Plates"]];
+  BOs = [[ISs[0][0] / 3, "Steam for Industrial Sawmills"]];
+  let CHEM = [
+    [IP2Amount / 20, "Treated Raw Iron for Industrial Electric Furnaces"],
+  ];
+  let IEFs = [[IP2Amount, "Liquid Iron for Ingot Molders (1:1)"]];
+  let IDs = [[CHEM[0][0] * 60, "Raw Iron for Chemical Reactor"]];
+  let HCL = [[(CHEM[0][0] * 1) / 5, "Chemical Reactor"]];
+  updateText("IP2_PMK2","Press MK2s",PMK2s)
+  updateText("IP2_ISM","Industrial Sawmills",ISs)
+  updateText("IP2_BO","Boilers",BOs)
+  updateText("IP2_CHEM","Chemical Reactors",CHEM)
+  updateText("IP2_IEF","Industrial Electric Furnaces",IEFs)
+  updateText("IP2_ID","Iron Drills",IDs)
+  updateText("IP2_HCl","Chemical Reactor",HCL)
 }
 setInterval(update, 50);
 

@@ -1,13 +1,23 @@
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
 @keyframes slide {
-  from {
+  0% {
     background-position: 0 0;
+    background-size: 400px 40 0px;
   }
-  to {
-    background-position: -200px -200px; /* Match the background-size width */
+  50% {
+    background-position: -200px -200px;
+    background-size: 200px 200px;
+  }
+  100% {
+    background-position: -400px -400px; /* Match the background-size width */
+    background-size: 400px 400px;
   }
 }
 .collapsible {
-  transition: max-height 1s cubic-bezier(0,0,0.5,1), opacity 1s cubic-bezier(0,0,0.5,1);
+  transition: max-height 1s linear, opacity 1s linear;
   opacity: 0;
   transition-delay: 0s;
   overflow: hidden;
@@ -17,7 +27,7 @@
 
 /* Use a large enough value to simulate "auto" */
 .collapsible.open {
-  max-height: 1200px; /* or some large enough px value */
+  max-height: 1000px; /* or some large enough px value */
   visibility: visible;
   opacity: 100;
 }
@@ -36,6 +46,10 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-color: rgba(1,1,1,0.5);
+  padding: 50px;
+  border-radius: 50px;
+  border-style: solid;
   z-index: 1;
 }
 .calculators {
@@ -97,7 +111,12 @@ button {
   left: 0%;
   z-index: 0;
   background-image: url("diamondplate.png");
+  transition: 0.5s; 
   background-repeat: repeat;
-  background-size: 200px 200px;
-  animation: slide 2.75s linear infinite;
+  background-size: 400px 400px;
+  animation: slide 2.75s ease-in-out infinite;
+}
+.background:hover {
+	background-image: url("handcrank.png");
+	transition: 0.5s;
 }
