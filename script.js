@@ -78,7 +78,7 @@ function update() {
   updateText("IP2_CHEM","Chemical Reactors",CHEM)
   updateText("IP2_IEF","Industrial Electric Furnaces",IEFs)
   updateText("IP2_ID","Iron Drills",IDs)
-  updateText("IP2_HCl","Chemical Reactor",HCL)
+  updateText("IP2_HCl","Hydrochloric Acid",HCL)
 }
 setInterval(update, 50);
 
